@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="mt-5 container">
+
+<div class="center">
+  <h1>Rechercher</h1>
+  <p>Entrer ce que vous chercher comme donnée</p>
+
+<%= simple_form_for(@search, url: searches_path, method: :post) do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[url]" id="search_query" placeholder="Saissisez une URL" /> <%# Placeholder: Effectuez une recherche sur InfoHarborXpress ou  %>
+    <button name="button" type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+    </button>
+  </div>
+<% end %>
+
+</div>
+</div>
