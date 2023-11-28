@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'searches/new'
   resources :results, only: [:new, :create, :show]
   resources :searchs, only: [:new, :create, :show]
   devise_for :users
