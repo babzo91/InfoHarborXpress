@@ -1,0 +1,7 @@
+
+<h1>Show Search</h1>
+
+<p>Search Term: <%= @search.name %></p>
+<p>Search Results: <%= @search.url %></p>
+
+<%= link_to "Convert CSV", new_search_result_path(@search) %>
