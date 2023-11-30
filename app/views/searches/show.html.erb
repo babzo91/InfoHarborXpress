@@ -1,7 +1,10 @@
-
+<div class = "mx-auto">
 <h1>Show Search</h1>
 
 <p>Search Term: <%= @search.name %></p>
 <p>Search Results: <%= @search.url %></p>
-
-<%= link_to "Convert CSV", new_search_result_path(@search) %>
+<% @kiwis.each do |kiwi| %>
+<p><%= kiwi[:name] %>   <%= kiwi[:price] %></p>
+<% end %></div>
+<p><%= link_to "Convert CSV", new_search_result_path(@search) %>
+<%= link_to "new search", root_path %></p></div>
