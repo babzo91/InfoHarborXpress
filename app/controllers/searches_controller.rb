@@ -1,7 +1,15 @@
 class SearchesController < ApplicationController
-
   def show
     @search = Search.find(params[:id])
+    if @search.name == "auchan"
+      @kiwis = helpers.auchan(@search.url)
+    elsif @search.name == "aubade"
+      @kiwis = helpers.aubade(@search.url)
+    elsif @search.name == "ikea"
+      @kiwis = helpers.ikea(@search.url)
+    else
+      redirect_to root_path
+    end
   end
 
   def create
