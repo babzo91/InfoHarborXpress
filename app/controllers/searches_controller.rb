@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   def show
     @search = Search.find(params[:id])
-    if @search.name == "auchan"
+    if @search.url.include?("auchan")
       @kiwis = helpers.auchan(@search.url)
     elsif @search.name == "aubade"
       @kiwis = helpers.aubade(@search.url)

@@ -1,10 +1,25 @@
-<div class = "mx-auto">
-<h1>Show Search</h1>
+<div class = "container">
+  <h1>Nom: <%= @search.name %></h1>
+  <p>Voici les resultats pour l'url <%= @search.url %> :</p>
 
-<p>Search Term: <%= @search.name %></p>
-<p>Search Results: <%= @search.url %></p>
-<% @kiwis.each do |kiwi| %>
-<p><%= kiwi[:name] %>   <%= kiwi[:price] %></p>
-<% end %></div>
-<p><%= link_to "Convert CSV", new_search_result_path(@search) %>
-<%= link_to "new search", root_path %></p></div>
+  <div class="row row-cols-1 row-cols-md-2 g-1">
+    <% @kiwis.each do |kiwi| %>
+      <div class="col mb-3">
+        <div class="card h-100 w-75">
+          <% if kiwi[:img] == "/static/images/pixel.png" %>
+            <%= image_tag "image_not_found.png", class: "card-img-top w-25 pt-2" %>
+          <% else %>
+            <%= image_tag kiwi[:img], class: "card-img-top w-25 pt-2" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= kiwi[:name] %></h5>
+            <p class="card-text"><%= kiwi[:price] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <p><%= link_to "Convert CSV", new_search_result_path(@search) %>
+    <%= link_to "new search", root_path %></p>
+  </div>
