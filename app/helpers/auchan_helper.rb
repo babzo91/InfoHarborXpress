@@ -9,6 +9,7 @@ module AuchanHelper
       price = item.at_css('meta[itemprop="price"]')['content'] + " €"
       img = item.at_css('img')['src']
       link = "https://www.auchan.fr#{item.at_css('a')['href']}"
+      kiwi << { name: name, price: price, img: img, link: link }
     end
     kiwi
   end
