@@ -24,3 +24,15 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+.page-container {
+  min-height: 100vh; /* Fixe la hauteur à 100% de la fenêtre du navigateur */
+  position: relative; /* Permet au contenu interne d'être positionné correctement */
+}
+
+.sticky-right-navbar {
+  position: fixed;
+  top: 50%; /* Ajustez cette valeur pour définir la distance du haut */
+  right: 20px; /* Ajustez cette valeur pour définir l'écart à droite */
+  transform: translateY(-50%);
+}
