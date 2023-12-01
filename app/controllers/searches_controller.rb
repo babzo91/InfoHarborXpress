@@ -3,6 +3,7 @@ class SearchesController < ApplicationController
     @search = Search.find(params[:id])
     if @search.url.include?("auchan")
       @kiwis = helpers.auchan(@search.url)
+      Result.create(search: @search, csv_file: @kiwis)
     elsif @search.name == "aubade"
       @kiwis = helpers.aubade(@search.url)
     elsif @search.name == "ikea"
@@ -10,6 +11,8 @@ class SearchesController < ApplicationController
     else
       redirect_to root_path
     end
+
+
   end
 
   def create
@@ -22,7 +25,6 @@ class SearchesController < ApplicationController
       redirect_to root_path, status: :unprocessable_entity
     end
   end
-
   private
 
   def search_params
