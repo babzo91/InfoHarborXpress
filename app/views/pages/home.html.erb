@@ -1,19 +1,24 @@
 <div class="mt-5 container">
+  <div class="text-center">
+    <h1>InfoHarborXpress</h1>
+    <p>Entrez les données que vous souhaitez extraire</p>
 
-<div class="center">
-  <h1>Rechercher</h1>
-  <p>Entrer ce que vous chercher comme donnée</p>
-
-<%= simple_form_for(@search, url: searches_path, method: :post) do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[name]" id="search_name" placeholder="Saissisez un nom pour votre liste" />
-    <input class="form-control string required" type="text" name="search[url]" id="search_query" placeholder="Saissisez une URL" /> <%# Placeholder: Effectuez une recherche sur InfoHarborXpress ou saissisez une URL %>
-    <button name="button" type="submit" class="btn btn-primary">
-    <i class="fas fa-search"></i>
-    </button>
+    <%= simple_form_for(@search, url: searches_path, method: :post, html: { class: "search-form" }) do |f| %>
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.input :name, label: "Nom", placeholder: "Saisissez un nom pour votre liste", input_html: { class: "form-control string required", id: "search_name" } %>
+          </div>
+          <div class="form-group">
+            <%= f.input :url, label: "URL", placeholder: "Saisissez une URL", input_html: { class: "form-control string required", id: "search_query" } %>
+            <div class="form-group mt-2">
+              <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-block" do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-<% end %>
-
-</div>
 </div>

@@ -5,7 +5,7 @@
   <div class="row row-cols-1 row-cols-md-2 g-1">
     <% @kiwis.each do |kiwi| %>
       <div class="col mb-3">
-        <div class="card h-100 w-75">
+        <div class="bg-white card h-100 shadow w-75">
           <div class="ps-3 pt-2">
           <% if kiwi[:img] == "/static/images/pixel.png" %>
             <%= image_tag "image_not_found.png", class:"w-25 h-100"%>
@@ -22,7 +22,8 @@
     <% end %>
   </div>
 
-  <div class="d-flex justify-content-start gap-1">
-    <p><%= link_to "Convertir en CSV",  search_save_csv_path(@search), class: "btn btn-primary"%></p>
-    <p><%= link_to "Nouvelle recherche", root_path, class: "btn btn-primary" %></p>
-  </div>
+</div>
+
+<div class="sticky-right-navbar">
+  <%= link_to "Convertir en CSV", search_save_csv_path(@search), class: "btn btn-success" %>
+</div>
