@@ -1,3 +1,16 @@
+puts "Suppression des données"
+Result.destroy_all
+puts "Resultats supprimés"
+Search.destroy_all
+puts "Recherche supprimées"
+puts "Voulez vous supprimer les utilisateurs ? (y/n)"
+answer = gets.chomp
+if answer == "y"
+  User.destroy_all
+  puts "Utilisateurs supprimés"
+else
+  puts "Utilisateurs conservés"
+end
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
