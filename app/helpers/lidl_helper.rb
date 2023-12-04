@@ -1,7 +1,6 @@
-module LildHelper
+module LidlHelper
  require 'csv'
-#  https://www.e.leclerc/pr/nouveautes-apple
-#  https://www.lidl.fr/h/multimedia/h10018903
+
   def lidl(input)
     kiwi = []
     result = scrap(input)
