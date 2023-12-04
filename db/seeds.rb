@@ -14,7 +14,7 @@ Search.destroy_all
 puts "Recherche supprimées"
 puts "Voulez-vous supprimer les utilisateurs ? (y/n)"
 answer = gets.chomp
-if answer == "y"
+if answer == "y" || answer == "Y"
   User.destroy_all
   puts "Utilisateurs supprimés"
 else
