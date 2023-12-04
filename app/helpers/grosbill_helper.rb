@@ -16,6 +16,20 @@ module GrosbillHelper
       link = item.at_css('a').attribute('href').text
       kiwi << { name: name, price: price, img: img, link: link }
     end
+    nb_pages = result.at_css('div.grb__liste-produit__top-seo__container-titre__nb-result p').text.split(" ").first.to_i/30
+    if nb_pages > 1
+      (2..nb_pages).each do |i|
+        new_url = "#{input}?page=#{2}"
+        result = scrap(new_url)
+        result.css('div.listing_dispo').each do |item|
+        name = item.css('h2').text.strip
+        price = item.at_css('div.grb__liste-produit__liste__produit__achat__prix span').text.strip
+        img = "https://www.grosbill.com/#{item.at_css('div.grb__liste-produit__liste__produit__image img').attribute('src').text}"
+        link = item.at_css('a').attribute('href').text
+        kiwi << { name: name, price: price, img: img, link: link }
+        end
+      end
+    end
     kiwi
   end
 
