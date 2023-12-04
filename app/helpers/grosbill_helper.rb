@@ -37,14 +37,7 @@ module GrosbillHelper
     kiwi = []
     result = scrap(input)
     name = result.css('span#_ctl0_ContentPlaceHolder1_l_libelle').text.strip
-    price = result.css('meta[property="product:price:amount"]')&.attr('content').text
-    puts price
-    puts '-'*50
-    # clean_price = []
-    # price.each do |n|
-    #   clean_price << n.gsub!(/&nbsp;/, '')
-    # end
-    # price = clean_price.join(",")
+    price = result.css('meta[property="product:price:amount"]')&.attr('content').text.strip
     img = "https://www.grosbill.com#{result.css('img#_ctl0_ContentPlaceHolder1_listViewImage2_ctrl0_img_produit_main').attribute('src').text}"
     link = input
     kiwi << { name: name, price: price, img: img, link: link }
