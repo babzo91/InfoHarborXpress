@@ -2,7 +2,7 @@ module LildHelper
  require 'csv'
 #  https://www.e.leclerc/pr/nouveautes-apple
 #  https://www.lidl.fr/h/multimedia/h10018903
-  def leclerc(input)
+  def lidl(input)
     kiwi = []
     result = scrap(input)
     result.css('li[id^="product_"]').each do |item|
