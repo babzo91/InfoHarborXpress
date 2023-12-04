@@ -13,6 +13,8 @@ class SearchesController < ApplicationController
       @kiwis = helpers.aubade(@search.url)
     elsif @search.name == "ikea"
       @kiwis = helpers.ikea(@search.url)
+    elsif @search.name == "grosbill"
+      @kiwis = helpers.grosbill(@search.url)
     else
       redirect_to root_path
     end

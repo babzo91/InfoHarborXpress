@@ -7,7 +7,7 @@ module AubadeHelper
       price = item.css('span.vk').text.strip
       image = item.css('img.model-image').attribute('data-src').to_s
       kiwi << { name: name, price: price, image: image }
-    end
+      end
     return kiwi
   end
 end
