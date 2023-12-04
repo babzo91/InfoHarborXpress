@@ -9,13 +9,15 @@ class SearchesController < ApplicationController
     elsif @search.url.include?("lidl")
       @kiwis = helpers.lidl(@search.url)
       Result.create(search: @search, csv_file: @kiwis)
+      
+    elsif @search.url.include?("grosbill")
+      @kiwis = helpers.grosbill(@search.url)
+      Result.create(search: @search, csv_file: @kiwis)
 
     elsif @search.name == "aubade"
       @kiwis = helpers.aubade(@search.url)
     elsif @search.name == "ikea"
       @kiwis = helpers.ikea(@search.url)
-    elsif @search.name == "grosbill"
-      @kiwis = helpers.grosbill(@search.url)
     else
       redirect_to root_path
     end
