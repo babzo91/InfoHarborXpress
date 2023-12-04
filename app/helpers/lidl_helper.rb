@@ -1,5 +1,5 @@
 module LidlHelper
- require 'csv'
+  require 'csv'
 
   def lidl(input)
     kiwi = []

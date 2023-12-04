@@ -1,29 +1,30 @@
-<div class = "container">
-  <h1>Votre liste: <%= @search.name %></h1>
-  <h5>Voici les resultats pour l'url <%= @search.url %> :</h5>
+<div class="container text-center" id="content-container">
+  <h1 class="align-center">Votre liste: <%= @search.name.capitalize %></h1>
+  <h5>Voici les résultats pour l'URL <%= @search.url %> :</h5>
 
-  <div class="row row-cols-1 row-cols-md-2 g-1">
+  <div class="row justify-content-center">
     <% @kiwis.each do |kiwi| %>
-      <div class="col mb-3">
-        <div class="bg-white card h-100 shadow w-75">
-          <div class="ps-3 pt-2">
-          <% if kiwi[:img] == "/static/images/pixel.png" || kiwi[:img].blank? %>
-            <%= image_tag "image_not_found.png", class:"w-25 h-100"%>
-          <% else %>
-            <%= image_tag kiwi[:img], class:"w-25"%>
-          <% end %>
+      <div class="col-12 col-md-4 mb-4">
+        <%= link_to kiwi[:link] do %>
+          <div class="bg-white card h-100 shadow">
+            <div class="ps-3 pt-2">
+              <% if kiwi[:img] == "/static/images/pixel.png" || kiwi[:img].blank? %>
+                <%= image_tag "image_not_found.png", class:"w-50 h-auto img-fluid"%>
+              <% else %>
+                <%= image_tag kiwi[:img], class:"w-50 h-auto img-fluid"%>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= kiwi[:name] %></h5>
+              <h5 class="card-text"><%= kiwi[:price] + " €" %></h5>
+            </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= kiwi[:name] %></h5>
-            <h6 class="card-text"><%= kiwi[:price] + " €" %></h6>
-          </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 
-</div>
-
-<div class="sticky-right-navbar">
-  <%= link_to "Convertir en CSV", search_save_csv_path(@search), class: "btn btn-success" %>
+  <div class="sticky-right-navbar">
+    <%= link_to "Convertir en CSV", search_save_csv_path(@search), class: "btn btn-success" %>
+  </div>
 </div>
