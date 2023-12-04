@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+  include ScrapHelper
   def show
     @search = Search.find(params[:id])
     if @search.url.include?("auchan")
