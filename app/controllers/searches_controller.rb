@@ -18,10 +18,6 @@ class SearchesController < ApplicationController
     end
   end
 
-  def compare
-
-  end
-
   def create
     @search = Search.new(search_params)
     @search.user = current_user
