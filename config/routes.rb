@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :results, only: [:new, :create, :show]
     get :results, to: "results#save_csv", as: :save_csv
   end
+  get '/searches/compare', to: 'searches#compare', as: :compare_searches
   get '/searches/:id/download_csv', to: 'results#download_csv', as: :download_csv_search
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
   devise_for :users

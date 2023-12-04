@@ -7,7 +7,7 @@
       <div class="col mb-3">
         <div class="bg-white card h-100 shadow w-75">
           <div class="ps-3 pt-2">
-          <% if kiwi[:img] == "/static/images/pixel.png" %>
+          <% if kiwi[:img] == "/static/images/pixel.png" || kiwi[:img].blank? %>
             <%= image_tag "image_not_found.png", class:"w-25 h-100"%>
           <% else %>
             <%= image_tag kiwi[:img], class:"w-25"%>

@@ -4,6 +4,11 @@ class SearchesController < ApplicationController
     if @search.url.include?("auchan")
       @kiwis = helpers.auchan(@search.url)
       Result.create(search: @search, csv_file: @kiwis)
+
+    elsif @search.url.include?("lidl")
+      @kiwis = helpers.lidl(@search.url)
+      Result.create(search: @search, csv_file: @kiwis)
+
     elsif @search.name == "aubade"
       @kiwis = helpers.aubade(@search.url)
     elsif @search.name == "ikea"
@@ -11,7 +16,9 @@ class SearchesController < ApplicationController
     else
       redirect_to root_path
     end
+  end
 
+  def compare
 
   end
 
