@@ -3,7 +3,6 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag ("logo infoharborxpress.jpg")%>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,6 +11,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "Comparer des produits", new_compare_path, class: "btn btn-primary mx-3" %>
             <%= link_to "Nouvelle recherche", root_path, class: "btn btn-primary mx-3" %>
           </li>
           <li class="nav-item dropdown">

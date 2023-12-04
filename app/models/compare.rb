@@ -1,0 +1,2 @@
+class Compare < ApplicationRecord
+end
