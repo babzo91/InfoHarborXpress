@@ -1,6 +1,14 @@
 .max-width-img {
-  // max-width: 300px;
-  // max-height: 400px;
-  max-width: 300px;
-  height: auto;
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+}
+
+h2.card-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sabrina {
+  height: 100%;
 }
