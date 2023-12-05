@@ -16,20 +16,10 @@ class ResultsController < ApplicationController
     send_data csv_data, filename: "#{search_name}_#{Time.zone.now}.csv"
   end
 
-  def download_csv
-    # helpers.write_to_csv(combined_data, "#{search_name}.csv")
-    # file_name = "#{@search.name}.csv"
-    # helpers.download_csv(file_name)
-  end
-
-  def create
-    # @search = Search.find(params[:search_id])
-    # @result = Result.new(@search)
-    # if @result.save!
-    #   redirect_to search_result_path(@search, @result)
-    # else
-    #   render :new, :unprocessable_entity
-    # end
+  def destroy
+    @result = Result.find(params[:id])
+    @result.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   def show

@@ -1,4 +1,3 @@
-<!-- index.html.erb -->
 <div class="mt-5 container">
   <div class="text-center">
     <h1 class="display-3 text-primary mb-4">InfoHarborXpress</h1>
@@ -12,7 +11,7 @@
           <div class="form-group">
             <%= f.input :url, label: "URL", placeholder: "Saisissez une URL", input_html: { class: "form-control form-control-lg", id: "search_query" } %>
             <div class="form-group mt-3 search-form-control">
-              <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-lg btn-block" do %>
+              <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-lg btn-block submit-button" do %>
                 <i class="fas fa-search"></i> Rechercher
               <% end %>
             </div>
@@ -21,17 +20,7 @@
       </div>
     <% end %>
 
-    <!-- Ajout de résultats de recherche stylés -->
-    <div class="mt-5">
-      <h2 class="text-primary mb-4">Résultats de la recherche :</h2>
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">Résultat 1</a>
-        <a href="#" class="list-group-item list-group-item-action">Résultat 2</a>
-        <!-- Ajoutez plus de résultats en fonction de la recherche -->
-      </div>
-    </div>
 
-    <!-- Ajout de sections pour Blogs, Tutoriels et Guide Débutant -->
     <div class="mt-5">
       <h2 class="text-primary mb-4">Explorez :</h2>
       <div class="row">
@@ -65,7 +54,6 @@
       </div>
     </div>
 
-    <!-- Ajout d'une section d'instructions stylée -->
     <div class="mt-5">
       <h2 class="text-primary mb-4">Ressources accorder pour chaque etapes du processus :</h2>
       <p class="lead">Commencez à utiliser notre forfait gratuit sans frais ou demandez un essai premium de 14 jours.</p>

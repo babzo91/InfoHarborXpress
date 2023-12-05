@@ -16,22 +16,17 @@ puts "Voulez-vous supprimer les utilisateurs ? (y/n)"
 answer = gets.chomp
 if answer == "y" || answer == "Y"
   User.destroy_all
+  puts ""
   puts "Utilisateurs supprimés"
+  User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqbal@bashir.com", password: "123456")
+  User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", password: "123456")
+  User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", password: "123456")
+  User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", password: "123456")
+
+  puts ""
+  puts "> New users created !"
+  puts ""
 else
+  puts ""
   puts "Utilisateurs conservés"
 end
-
-User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqbal@bashir.com", password: "123456")
-User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", password: "123456")
-User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", password: "123456")
-User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", password: "123456")
-
-puts "********************************************************************************************************"
-puts "********************************************************************************************************"
-puts "********************************************************************************************************"
-
-puts "> Users Created !"
-
-puts "********************************************************************************************************"
-puts "********************************************************************************************************"
-puts "********************************************************************************************************"

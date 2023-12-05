@@ -4,12 +4,15 @@
   <div class="row">
     <% @results.each do |result| %>
       <div class="col-md-4 mb-3">
-        <div class="bg-white card h-100 shadow w-100">
+        <div class="bg-white card h-100 shadow w-100 position-relative">
           <div class="card-body text-center">
             <h5 class="card-title"><%= result.search.name %></h5>
             <%= link_to "Télécharger CSV", search_save_csv_path(result.search), class: "btn btn-success btn-sm", download: true %>
             <%= link_to "Voir la recherche", search_path(result.search), class: "btn btn-primary btn-sm" %>
           </div>
+          <%= link_to search_path(result.search), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette recherche ?" }, class: "position-absolute top-0 end-0 mt-1 me-3 text-danger" do %>
+            <i class="fas fa-trash"></i> <!-- Exemple d'utilisation d'une icône de poubelle -->
+          <% end %>
         </div>
       </div>
     <% end %>

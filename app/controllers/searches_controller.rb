@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
     elsif @search.url.include?("lidl")
       @kiwis = helpers.lidl(@search.url)
       Result.create(search: @search, csv_file: @kiwis)
-      
+
     elsif @search.url.include?("grosbill")
       @kiwis = helpers.grosbill(@search.url)
       Result.create(search: @search, csv_file: @kiwis)
@@ -19,7 +19,7 @@ class SearchesController < ApplicationController
     elsif @search.name == "ikea"
       @kiwis = helpers.ikea(@search.url)
     else
-      redirect_to root_path
+      redirect_to root_path, status: :unprocessable_entity
     end
   end
 
@@ -33,6 +33,16 @@ class SearchesController < ApplicationController
       redirect_to root_path, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @search = Search.find(params[:id])
+
+    Result.where(search_id: @search.id).destroy_all
+
+     @search.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def search_params
