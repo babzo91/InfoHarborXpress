@@ -8,15 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+  
   </head>
 
   <header class = "sticky-top">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
   </header>
+
   <body>
     <%# <div class="bg-image"> %>
       <%= yield %>
     <%# </div> %>
   </body>
+
 </html>
