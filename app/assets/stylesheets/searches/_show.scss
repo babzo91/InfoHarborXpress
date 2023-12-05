@@ -1,18 +1,18 @@
-.card {
+.carte {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
 
-.card:hover {
+.carte:hover {
   transform: scale(1.1);
 }
 
-.card img {
+.carte img {
   transition: transform 0.3s ease;
 }
 
-.card .card-body {
+.carte .carte-body {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -22,11 +22,10 @@
   background: rgba(255, 255, 255, 0.9); /* Couleur de fond quasi transparente */
 }
 
-.card:hover .card-body {
+.carte:hover .carte-body {
   transform: translateY(0);
 }
 
-.card .card-body h5 {
+.carte .carte-body h5 {
   margin: 0;
 }
-
