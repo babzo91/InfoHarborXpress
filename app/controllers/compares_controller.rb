@@ -16,7 +16,7 @@ class ComparesController < ApplicationController
     @compare = Compare.find(params[:id])
 
     if @compare.url1.include?("auchan")
-      @url1 = helpers.auchan(@compare.url1)
+      @url1 = helpers.search_one_auchan(@compare.url1)
     elsif @compare.url1.include?("lidl")
       @url1 = helpers.search_one_lidl(@compare.url1)
     elsif @compare.url1.include?("grosbill")
@@ -24,7 +24,7 @@ class ComparesController < ApplicationController
     end
 
     if @compare.url2.include?("auchan")
-      @url2 = helpers.auchan(@compare.url2)
+      @url2 = helpers.search_one_auchan(@compare.url2)
     elsif @compare.url2.include?("lidl")
       @url2 = helpers.search_one_lidl(@compare.url2)
     elsif @compare.url2.include?("grosbill")
