@@ -2,16 +2,16 @@
   <div class="text-center">
     <h1 class="display-3 mb-4">InfoHarborXpress</h1>
     <p class="lead">Entrez les données que vous souhaitez extraire</p>
-    <%= simple_form_for(@search, url: searches_path, method: :post, html: { class: "search-form" }) do |f| %>
+    <%= simple_form_for(@search, url: searches_path, method: :post, html: { class: "search-form " }) do |f| %>
       <div class="row justify-content-center mt-5">
         <div class="col-md-6">
           <div class="form-group">
-            <%= f.input :name, label: "Nom", placeholder: "Saisissez un nom pour votre liste", input_html: { class: "form-control form-control-lg", id: "search_name" } %>
+            <%= f.input :name, label: "Nom", placeholder: "Saisissez un nom pour votre liste", input_html: { class: "form-control form-control-lg border border-info border-4", id: "search_name" } %>
           </div>
           <div class="form-group">
-            <%= f.input :url, label: "URL", placeholder: "Saisissez une URL", input_html: { class: "form-control form-control-lg", id: "search_query" } %>
+            <%= f.input :url, label: "URL", placeholder: "Saisissez une URL", input_html: { class: "form-control form-control-lg border border-info border-4", id: "search_query" } %>
             <div class="form-group mt-3 search-form-control">
-              <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-lg btn-block submit-button" do %>
+              <%= f.button :submit, "Rechercher", class: "btn btn-dark btn-lg btn-block border border-info border-3 submit-button" do %>
                 <i class="fas fa-search"></i> Rechercher
               <% end %>
             </div>
