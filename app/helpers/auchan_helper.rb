@@ -14,6 +14,16 @@ module AuchanHelper
     kiwi
   end
 
+  def search_one_auchan(input)
+    kiwi = []
+    result = scrap(input)
+    name = result.at_css('meta[property="og:title"]')['content']
+    price = result.at_css('meta[itemprop="price"]')['content']
+    img = result.at_css('meta[property="og:image"]')['content']
+    link = input
+    kiwi << { name: name, price: price, img: img, link: link }
+  end
+
   def generate_csv_data(data)
     csv_data = CSV.generate(force_quotes: true) do |csv|
       csv << ['URL', 'Produit', 'Prix']
