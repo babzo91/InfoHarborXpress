@@ -1,39 +1,42 @@
-<div class="container">
+<%# <p class="card-text"> Lien vers le produit <i class="fa-solid fa-arrow-right"></i></p> %>
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-6">
-      <div class="card mb-3">
-        <div class="card-body">
-          <h2 class="card-title"><%= @url2[0][:name] %></h2>
-          <% if @url2[0][:price].to_f > @url1[0][:price].to_f  %>
-            <p class="card-text text-danger">Prix: <%= @url2[0][:price] %>€</p>
-          <% else %>
-            <p class="card-text text-success">Prix: <%= @url2[0][:price] %>€</p>
+      <div class="card sabrina mb-3">
+        <%= link_to @url2[0][:link] do  %>
+          <div class="card-body">
+            <h2 class="card-title"><%= @url2[0][:name] %></h2>
+            <% if @url2[0][:price].to_f > @url1[0][:price].to_f  %>
+              <p class="card-text text-danger">Prix: <%= @url2[0][:price] %>€</p>
+            <% else %>
+              <p class="card-text text-success">Prix: <%= @url2[0][:price] %>€</p>
+            <% end %>
+            <% if @url2[0][:img].blank? || @url2[0][:img] == "/static/images/pixel.png" %>
+              <%= image_tag "image_not_found.png", alt: "Image non trouvée", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
+            <% else %>
+              <%= image_tag @url2[0][:img], alt: "Image produit", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
           <% end %>
-          <p class="card-text"><a href="<%= @url2[0][:link] %>">Lien vers le produit</a></p>
-          <% if @url2[0][:img].blank? || @url2[0][:img] == "/static/images/pixel.png" %>
-            <%= image_tag "image_not_found.png", alt: "Image non trouvée", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
-          <% else %>
-            <%= image_tag @url2[0][:img], alt: "Image produit", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
-          <% end %>
+        <% end %>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card mb-3">
-        <div class="card-body">
-          <h2 class="card-title"><%= @url1[0][:name] %></h2>
-          <% if @url1[0][:price].to_f > @url2[0][:price].to_f  %>
-            <p class="card-text text-danger">Prix: <%= @url1[0][:price] %>€</p>
-          <% else %>
-            <p class="card-text text-success">Prix: <%= @url1[0][:price] %>€</p>
-          <% end %>
-          <p class="card-text"><a href="<%= @url1[0][:link] %>">Lien vers le produit</a></p>
-          <% if @url1[0][:img].blank? || @url1[0][:img] == "/static/images/pixel.png" %>
-            <%= image_tag "image_not_found.png", alt: "Image non trouvée", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
-          <% else %>
-            <%= image_tag @url1[0][:img], alt: "Image produit", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
-          <% end %>
-        </div>
+      <div class="card sabrina mb-3">
+        <%= link_to @url2[0][:link] do  %>
+          <div class="card-body">
+            <h2 class="card-title"><%= @url1[0][:name] %></h2>
+            <% if @url1[0][:price].to_f > @url2[0][:price].to_f  %>
+              <p class="card-text text-danger">Prix: <%= @url1[0][:price] %>€</p>
+            <% else %>
+              <p class="card-text text-success">Prix: <%= @url1[0][:price] %>€</p>
+            <% end %>
+            <% if @url1[0][:img].blank? || @url1[0][:img] == "/static/images/pixel.png" %>
+              <%= image_tag "image_not_found.png", alt: "Image non trouvée", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
+            <% else %>
+              <%= image_tag @url1[0][:img], alt: "Image produit", class: "card-img-top img-fluid rounded mx-auto d-block max-width-img" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
