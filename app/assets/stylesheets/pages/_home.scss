@@ -1,11 +1,92 @@
-h1 {
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
-              0px 0px 10px rgba(255, 255, 255, 1),
-              0px 0px 15px rgba(255, 255, 255, 1),
-              0px 0px 20px rgba(73, 255, 24, 1),
-              0px 0px 30px rgba(73, 255, 24, 1),
-              0px 0px 40px rgba(73, 255, 24, 1),
-              0px 0px 55px rgba(73, 255, 24, 1),
-              0px 0px 75px rgba(73, 255, 24, 1);
-  font-weight: 900;
+// h1 {
+//   text-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
+//               0px 0px 10px rgba(255, 255, 255, 1),
+//               0px 0px 15px rgba(255, 255, 255, 1),
+//               0px 0px 20px rgba(73, 255, 24, 1),
+//               0px 0px 30px rgba(73, 255, 24, 1),
+//               0px 0px 40px rgba(73, 255, 24, 1),
+//               0px 0px 55px rgba(73, 255, 24, 1),
+//               0px 0px 75px rgba(73, 255, 24, 1);
+// }
+
+.wide_input_home {
+  width: 400px;
+}
+
+.flex_home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: rgb(182, 180, 180);
+  background-color: #55c9cc;
+  // height: 30vh;
+  h1 {
+    font-weight: bold;
+    font-size: 5rem;
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .home_image {
+    img {
+      width: 50%;
+    }
+  }
+}
+
+.text_home {
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+  span {
+    color: white;
+  }
+}
+
+.home_submit {
+  width: 145px;
+  height: 47px;
+  background-color: #55c9cc;
+  border: none;
+}
+
+.search-form {
+  h6 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+form#new_search {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+a.btn.btn-primary {
+  background-color: #55c9cc;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+  margin-bottom: 50px;
+  &:hover {
+    background-color: white;
+    border: 1px solid #55c9cc;
+    color: #55c9cc;
+  }
+}
+
+.card_home {
+  display: flex;
+  height: 200px;
+  width: auto;
+  text-align: center;
 }
