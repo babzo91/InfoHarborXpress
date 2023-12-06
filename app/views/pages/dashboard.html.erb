@@ -10,7 +10,7 @@
             <%= link_to "Télécharger CSV", search_save_csv_path(result.search), class: "btn btn-success btn-sm", download: true %>
             <%= link_to "Voir la recherche", search_path(result.search), class: "btn btn-primary btn-sm" %>
           </div>
-          <%= link_to search_path(result.search), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette recherche ?" }, class: "position-absolute top-0 end-0 mt-1 me-3 text-danger" do %>
+          <%= link_to search_path(result.search), data: {turbo: true, turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette recherche ?" }, class: "position-absolute top-0 end-0 mt-1 me-3 text-danger" do %>
             <i class="fas fa-trash"></i> <!-- Exemple d'utilisation d'une icône de poubelle -->
           <% end %>
         </div>
