@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
   include ScrapHelper
+
   def show
     @search = Search.find(params[:id])
     if @search.url.include?("auchan")
@@ -23,11 +24,12 @@ class SearchesController < ApplicationController
     end
   end
 
+  def
+
   def create
     @search = Search.new(search_params)
     @search.user = current_user
     if @search.save
-      # redirect_to new_search_result_path(@search)
       redirect_to search_path(@search)
     else
       redirect_to root_path, status: :unprocessable_entity
@@ -39,7 +41,7 @@ class SearchesController < ApplicationController
 
     Result.where(search_id: @search.id).destroy_all
 
-     @search.destroy
+    @search.destroy
     redirect_to dashboard_path, status: :see_other
   end
 
