@@ -1,0 +1,24 @@
+footer.footer.bg-dark.text-light.py-4.mt-5 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.body {
+  min-height: 100vh;
+  box-sizing: inherit;
+  padding-bottom: 220px;
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  box-sizing: inherit;
+  padding-bottom: 220px;
+  position: relative;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
