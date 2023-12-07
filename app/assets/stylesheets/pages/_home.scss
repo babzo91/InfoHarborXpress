@@ -1,4 +1,4 @@
-// h1 {
+.matrix-text {
 //   text-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
 //               0px 0px 10px rgba(255, 255, 255, 1),
 //               0px 0px 15px rgba(255, 255, 255, 1),
@@ -7,7 +7,9 @@
 //               0px 0px 40px rgba(73, 255, 24, 1),
 //               0px 0px 55px rgba(73, 255, 24, 1),
 //               0px 0px 75px rgba(73, 255, 24, 1);
-// }
+  color: white;
+  font-weight: bold;
+}
 
 .wide_input_home {
   width: 400px;

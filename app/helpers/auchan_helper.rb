@@ -34,17 +34,4 @@ module AuchanHelper
     end
     return csv_data
   end
-
-  # def write_to_csv(data, file_name)
-  #   CSV.open(file_name, 'wb') do |csv|
-  #     search_name = data[:search_name]
-
-  #     csv << ['Search URL', 'Product Name', 'Product Price']
-
-  #     scraped_data = data[:scraped_data]
-  #     scraped_data.each do |product|
-  #       csv << [product[:link], product[:name].gsub(',', ' '), product[:price]]
-  #     end
-  #   end
-  # end
 end

@@ -1,22 +1,23 @@
-<div class = "bg-image-dashboard">
-<div class="container mt-4">
-<h1 class="mb-4 text-center">Historique de recherche</h1>
+<div class="git body">
+  <div class="container mt-4">
+  <h1 class="mb-4 text-center">Historique de recherche</h1>
 
-  <div class="row">
-    <% @results.each do |result| %>
-      <div class="col-md-4 mb-3">
-        <div class="bg-white card h-100 shadow w-100 position-relative">
-          <div class="card-body text-center">
-            <h5 class="card-title"><%= result.search.name %></h5>
-            <%= link_to "Télécharger CSV", search_save_csv_path(result.search), class: "btn btn-success btn-sm", download: true %>
-            <%= link_to "Voir la recherche", search_path(result.search), class: "btn btn-primary btn-sm" %>
+    <div class="row">
+      <% @results.each do |result| %>
+        <div class="col-md-4 mb-3">
+          <div class="bg-white card h-100 shadow w-100 position-relative">
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= result.search.name %></h5>
+              <%= link_to "Télécharger CSV", search_save_csv_path(result.search), class: "btn btn-success btn-sm", download: true %>
+              <%= link_to "Voir la recherche", search_path(result.search), class: "btn btn-primary btn-sm" %>
+            </div>
+            <%= link_to search_path(result.search), data: {turbo_: true, turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette recherche ?" }, class: "position-absolute top-0 end-0 mt-1 me-3 text-danger" do %>
+              <i class="fas fa-trash"></i> <!-- Exemple d'utilisation d'une icône de poubelle -->
+            <% end %>
           </div>
-          <%= link_to search_path(result.search), data: {turbo_: true, turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette recherche ?" }, class: "position-absolute top-0 end-0 mt-1 me-3 text-danger" do %>
-            <i class="fas fa-trash"></i> <!-- Exemple d'utilisation d'une icône de poubelle -->
-          <% end %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 </div>
