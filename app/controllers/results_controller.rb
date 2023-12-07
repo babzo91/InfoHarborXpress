@@ -22,9 +22,6 @@ class ResultsController < ApplicationController
     redirect_to dashboard_path, status: :see_other
   end
 
-  def show
-  end
-
   private
 
   def result_params
