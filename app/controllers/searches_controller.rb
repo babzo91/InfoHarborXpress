@@ -24,8 +24,6 @@ class SearchesController < ApplicationController
     end
   end
 
-  def
-
   def create
     @search = Search.new(search_params)
     @search.user = current_user
