@@ -72,11 +72,24 @@ form#new_search {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-a.btn.btn-primary {
+
+input.btn.btn.btn-primary{
   background-color: #55c9cc;
   border: 1px solid transparent;
   transition: 0.3s ease;
   margin-bottom: 50px;
+  &:hover {
+    background-color: white;
+    border: 1px solid #55c9cc;
+    color: #55c9cc;
+  }
+}
+
+a.btn.btn-primary {
+  background-color: #55c9cc;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+  // margin-bottom: 50px;
   &:hover {
     background-color: white;
     border: 1px solid #55c9cc;
