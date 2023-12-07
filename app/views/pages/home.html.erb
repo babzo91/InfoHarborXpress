@@ -1,13 +1,12 @@
-<div class="body">
-  <header class="flex_home">
-    <div class="text_home">
-      <h1 class="display-3">InfoHarborXpress</h1>
-      <p class="lead">Découvrez une nouvelle façon de <span>collecter la donnée</span></p>
-    </div>
-    <div class="home_image">
-      <%= image_tag "imageScraping.png"%>
-    </div>
-  </header>
+<header class="flex_home">
+  <div class="text_home">
+    <h1 class="display-3">InfoHarborXpress</h1>
+    <p class="lead">Découvrez une nouvelle façon de <span>collecter des données</span></p>
+  </div>
+  <div class="home_image">
+    <%= image_tag "imageScraping.png"%>
+  </div>
+</header>
 
   <%= simple_form_for(@search, url: searches_path, method: :post, html: { class: "search-form " }) do |f| %>
     <h6>Entrez les informations pour votre recherche</h6>
