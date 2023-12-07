@@ -1,57 +1,59 @@
-<header class="flex_home">
-  <div class="text_home">
-    <h1 class="display-3">InfoHarborXpress</h1>
-    <p class="lead">Découvrez une nouvelle façon de <span>collecter des données</span></p>
-  </div>
-  <div class="home_image">
-    <%= image_tag "imageScraping.png"%>
-  </div>
-</header>
-
-  <%= simple_form_for(@search, url: searches_path, method: :post, html: { class: "search-form " }) do |f| %>
-    <h6>Entrez les informations pour votre recherche</h6>
-    <div class="form-group search">
-      <%= f.input :name, label: false, placeholder: "Saisissez un nom pour votre liste", input_html: { class: "form-control wide_input_home form-control-lg", id: "search_name" }%>
-      <%= f.input :url, label: false, placeholder: "Saisissez une URL", input_html: { class: "form-control wide_input_home form-control-lg ms-2", id: "search_query" } %>
-      <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-lg btn-block submit-button home_submit ms-3" do %>
-      <% end %>
+<div class="body">
+  <header class="flex_home">
+    <div class="text_home">
+      <h1 class="display-3">InfoHarborXpress</h1>
+      <p class="lead">Découvrez une nouvelle façon de <span>collecter des données</span></p>
     </div>
-  <% end %>
+    <div class="home_image">
+      <%= image_tag "imageScraping.png"%>
+    </div>
+  </header>
 
-  <div class="mt-5 container">
-    <div class="mt-5">
-      <h2 class="text-primary mb-4">Explorez nos ressources :</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card card_home">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Articles</h5>
-              <p class="card-text">Découvrez une variété d'articles enrichissants.</p>
-            </div>
-            <div>
-              <a href="#" class="btn btn-primary mb-5">Explorer</a>
+    <%= simple_form_for(@search, url: searches_path, method: :post, html: { class: "search-form " }) do |f| %>
+      <h6>Entrez les informations pour votre recherche</h6>
+      <div class="form-group search">
+        <%= f.input :name, label: false, placeholder: "Saisissez un nom pour votre liste", input_html: { class: "form-control wide_input_home form-control-lg", id: "search_name" }%>
+        <%= f.input :url, label: false, placeholder: "Saisissez une URL", input_html: { class: "form-control wide_input_home form-control-lg ms-2", id: "search_query" } %>
+        <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-lg btn-block submit-button home_submit ms-3" do %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="mt-5 container">
+      <div class="mt-5">
+        <h2 class="text-primary mb-4">Explorez nos ressources :</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card_home">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Articles</h5>
+                <p class="card-text">Découvrez une variété d'articles enrichissants.</p>
+              </div>
+              <div>
+                <a href="#" class="btn btn-primary mb-5">Explorer</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card_home">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Guides</h5>
-              <p class="card-text">Découvrez des informations utiles à travers nos guides détaillés.</p>
-            </div>
-            <div>
-              <a href="#" class="btn btn-primary mb-5">Explorer</a>
+          <div class="col-md-4">
+            <div class="card card_home">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Guides</h5>
+                <p class="card-text">Découvrez des informations utiles à travers nos guides détaillés.</p>
+              </div>
+              <div>
+                <a href="#" class="btn btn-primary mb-5">Explorer</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card_home">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Données</h5>
-              <p class="card-text">Explorez une variété de données et d'informations.</p>
-            </div>
-            <div>
-              <a href="#" class="btn btn-primary mb-5">Explorer</a>
+          <div class="col-md-4">
+            <div class="card card_home">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Données</h5>
+                <p class="card-text">Explorez une variété de données et d'informations.</p>
+              </div>
+              <div>
+                <a href="#" class="btn btn-primary mb-5">Explorer</a>
+              </div>
             </div>
           </div>
         </div>
