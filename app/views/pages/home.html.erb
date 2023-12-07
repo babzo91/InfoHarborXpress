@@ -13,54 +13,48 @@
   <div class="form-group search">
     <%= f.input :name, label: false, placeholder: "Saisissez un nom pour votre liste", input_html: { class: "form-control wide_input_home form-control-lg", id: "search_name" }%>
     <%= f.input :url, label: false, placeholder: "Saisissez une URL", input_html: { class: "form-control wide_input_home form-control-lg ms-2", id: "search_query" } %>
-    <%= f.button :submit, "Rechercher", class: "btn btn-dark btn-lg btn-block submit-button home_submit ms-3" do %>
+    <%= f.button :submit, "Rechercher", class: "btn btn-primary btn-lg btn-block submit-button home_submit ms-3" do %>
     <% end %>
   </div>
 <% end %>
 
-
 <div class="mt-5 container">
   <div class="mt-5">
-    <h2 class="text-primary mb-4">Explorez :</h2>
+    <h2 class="text-primary mb-4">Explorez nos ressources :</h2>
     <div class="row">
       <div class="col-md-4">
         <div class="card card_home">
           <div class="card-body">
-            <h5 class="card-title text-primary">Blogs</h5>
-            <p class="card-text">Découvrez les derniers articles passionnants.</p>
+            <h5 class="card-title text-primary">Articles</h5>
+            <p class="card-text">Découvrez une variété d'articles enrichissants.</p>
           </div>
           <div>
-            <a href="#" class="btn btn-primary">Explorer</a>
+            <a href="#" class="btn btn-primary mb-5">Explorer</a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card card_home">
           <div class="card-body">
-            <h5 class="card-title text-primary">Tutoriels</h5>
-            <p class="card-text">Apprenez avec nos guides détaillés.</p>
+            <h5 class="card-title text-primary">Guides</h5>
+            <p class="card-text">Explorez des guides pour des informations utiles.</p>
           </div>
           <div>
-            <a href="#" class="btn btn-primary">Explorer</a>
+            <a href="#" class="btn btn-primary mb-5">Explorer</a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card card_home">
           <div class="card-body">
-            <h5 class="card-title text-primary">Guide Débutant</h5>
-            <p class="card-text">Commencez votre voyage avec nos conseils pratiques.</p>
+            <h5 class="card-title text-primary">Données</h5>
+            <p class="card-text">Accédez à différentes données et informations.</p>
           </div>
           <div>
-            <a href="#" class="btn btn-primary">Explorer</a>
+            <a href="#" class="btn btn-primary mb-5">Explorer</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="mt-5">
-    <h2 class="text-primary mb-4">Ressources accorder pour chaque etapes du processus :</h2>
-    <p class="lead">Commencez à utiliser notre forfait gratuit sans frais ou demandez un essai premium de 14 jours.</p>
   </div>
 </div>

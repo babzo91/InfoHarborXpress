@@ -5,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag "favicon" %>
+    <%= display_meta_tags site: "InfoHarborXpress" %>
+    <%= display_meta_tags og: {
+      title:    'InfoHarborXpress',
+      link:     'https://www.inforharborxpress.me/',
+      image:    '/app/assets/images/meta_tag_img.png',
+      description: 'Explorez une diversité de données en ligne provenant de multiples sources pour découvrir des informations variées et pertinentes sur différents sujets.',
+      type:     'website',
+      keywords: "scrapping, donnée, vol",
+      locale:   'fr_FR',
+      language: 'fr'
+    }
+    %>
+    <%= favicon_link_tag "/app/assets/images/logo_sans_titre.png" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
 
   </head>
-
-  <nav class = "sticky-top">
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-  </nav>
+    <%= render "layouts/navbar" %>
 
   <body>
+    <%= render "shared/flashes" %>
     <%# <div class="bg-image"> %>
       <%= yield %>
     <%# </div> %>
   </body>
 
+    <%= render "layouts/footer" %>
 </html>
