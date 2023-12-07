@@ -17,3 +17,20 @@ h2.card-title {
 .row.justify-content-center.mt-5 {
   width: 100%;
 }
+
+.matrix {
+  background-image: image-url('matrix_background.gif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 20px;
+  label {
+    font-weight: bold;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: bold;
+  }
+}
