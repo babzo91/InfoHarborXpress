@@ -1,32 +1,61 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+include ScrapHelper
+include AuchanHelper
+include GrosbillHelper
+
 puts "Suppression des données"
 Result.destroy_all
+puts ""
 puts "Resultats supprimés"
 Search.destroy_all
+puts ""
 puts "Recherche supprimées"
-puts "Voulez-vous supprimer les utilisateurs ? (y/n)"
-answer = gets.chomp
-if answer == "y" || answer == "Y"
-  User.destroy_all
-  puts ""
-  puts "Utilisateurs supprimés"
-  User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqbal@bashir.com", password: "123456")
-  User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", password: "123456")
-  User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", password: "123456")
-  User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", password: "123456")
+User.destroy_all
+puts ""
+puts "Utilisateurs supprimés"
+puts ""
+User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqbal@bashir.com", password: "123456")
+User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", password: "123456")
+User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", password: "123456")
+harris = User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", password: "123456")
+puts ""
+puts "> Utilisateurs créés"
+puts ""
 
-  puts ""
-  puts "> New users created !"
-  puts ""
-else
-  puts ""
-  puts "Utilisateurs conservés"
-end
+puts "Création des recherches"
+puts ""
+
+brico = Search.create!(url: "https://www.auchan.fr/jardin-auto-brico/bricolage/ca-7135356", name: "Auchan Bricolage", user_id: harris.id)
+csv_file = AuchanHelper.auchan(brico.url)
+Result.create!(search_id: brico.id, csv_file: csv_file)
+puts "Auchan Brico OK"
+
+audio = Search.create(url: "https://www.auchan.fr/high-tech-audio-tv-telephonie/audio-hifi-home-cinema/ca-8262", name: "Auchan Audio", user_id: harris.id)
+csv_file = AuchanHelper.auchan(audio.url)
+Result.create!(search_id: audio.id, csv_file: csv_file)
+puts "Auchan Audio OK"
+
+playmobil = Search.create(url:"https://www.auchan.fr/jouets-jeux-video-loisirs/jeux-jouets/lego-playmobil-construction/playmobil/ca-6856166", name: "Auchan Playmobil", user_id: harris.id)
+csv_file = AuchanHelper.auchan(playmobil.url)
+Result.create!(search_id: playmobil.id, csv_file: csv_file)
+puts "Auchan Playmobil OK"
+
+tefal = Search.create(url: "https://www.auchan.fr/marques/marque-tefal/ca-7476073", name: "Auchan Tefal", user_id: harris.id)
+csv_file = AuchanHelper.auchan(tefal.url)
+Result.create!(search_id: tefal.id, csv_file: csv_file)
+puts "Auchan Tefal OK"
+
+moto = Search.create(url: "https://www.auchan.fr/jardin-auto-brico/auto-moto/ca-7290055", name: "Auchan Moto", user_id: harris.id)
+csv_file = AuchanHelper.auchan(moto.url)
+Result.create!(search_id: moto.id, csv_file: csv_file)
+puts "Auchan Moto OK"
+
+multicuiseur = Search.create(url: "https://www.auchan.fr/electromenager-cuisine/petits-appareils-de-cuisine/robot-de-cuisine/multicuiseur/ca-201609161742", name: "Auchan Multicuiseur", user_id: harris.id)
+csv_file = AuchanHelper.auchan(multicuiseur.url)
+Result.create!(search_id: multicuiseur.id, csv_file: csv_file)
+puts "Auchan Multicuiseur OK"
+
+velo = Search.create(url: "https://www.auchan.fr/jouets-jeux-video-loisirs/sport-plein-air/velo-cyclisme/velo-enfant/velo-de-6-a-12-ans/ca-201901241520", name: "Auchan Velo", user_id: harris.id)
+csv_file = AuchanHelper.auchan(velo.url)
+Result.create!(search_id: velo.id, csv_file: csv_file)
+puts "Auchan Velo OK"
+
