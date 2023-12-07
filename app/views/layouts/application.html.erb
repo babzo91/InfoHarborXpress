@@ -23,16 +23,14 @@
 
 
   </head>
-
-  <nav class = "sticky-top">
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-  </nav>
+    <%= render "layouts/navbar" %>
 
   <body>
+    <%= render "shared/flashes" %>
     <%# <div class="bg-image"> %>
       <%= yield %>
     <%# </div> %>
   </body>
 
+    <%= render "layouts/footer" %>
 </html>
