@@ -1,29 +1,31 @@
-<div class="container text-center" id="content-container">
-  <h1 class="align-center">Votre liste: <%= @search.name.capitalize %></h1>
-<h5>Voici les résultats pour l'URL <%= @search.url %> :</h5>
-  <div class="row justify-content-center">
-    <% @kiwis.each do |kiwi| %>
-      <div class="col-12 col-md-4 mb-4">
-        <%= link_to kiwi[:link] do %>
-          <div class="bg-white card carte h-100 shadow">
-            <div class="ps-3 pt-2">
-              <% if kiwi[:img] == "/static/images/pixel.png" || kiwi[:img].blank? %>
-                <%= image_tag "image_not_found.png", class:"w-50 h-auto img-fluid"%>
-              <% else %>
-                <%= image_tag kiwi[:img], class:"w-50 h-auto img-fluid"%>
-              <% end %>
+<div class="body">
+  <div class="container text-center" id="content-container">
+    <h1 class="align-center">Votre liste: <%= @search.name.capitalize %></h1>
+  <h5>Voici les résultats pour l'URL <%= @search.url %> :</h5>
+    <div class="row justify-content-center">
+      <% @kiwis.each do |kiwi| %>
+        <div class="col-12 col-md-4 mb-4">
+          <%= link_to kiwi[:link] do %>
+            <div class="bg-white card carte h-100 shadow">
+              <div class="ps-3 pt-2">
+                <% if kiwi[:img] == "/static/images/pixel.png" || kiwi[:img].blank? %>
+                  <%= image_tag "image_not_found.png", class:"w-50 h-auto img-fluid"%>
+                <% else %>
+                  <%= image_tag kiwi[:img], class:"w-50 h-auto img-fluid"%>
+                <% end %>
+              </div>
+              <div class="card-body carte-body">
+                <h5 class="card-title"><%= kiwi[:name] %></h5>
+                <h5 class="card-text"><%= kiwi[:price] + " €" %></h5>
+              </div>
             </div>
-            <div class="card-body carte-body">
-              <h5 class="card-title"><%= kiwi[:name] %></h5>
-              <h5 class="card-text"><%= kiwi[:price] + " €" %></h5>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
-  <div class="sticky-right-navbar">
-<%= link_to "Convertir en CSV", search_save_csv_path(@search), class: "btn btn-success convert-button" %>
+    <div class="sticky-right-navbar">
+  <%= link_to "Convertir en CSV", search_save_csv_path(@search), class: "btn btn-success convert-button" %>
+    </div>
   </div>
 </div>
