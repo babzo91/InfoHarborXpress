@@ -20,7 +20,6 @@ harris = User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris
 puts ""
 puts "> Utilisateurs créés"
 puts ""
-
 puts "Création des recherches"
 puts ""
 
@@ -34,6 +33,11 @@ csv_file = AuchanHelper.auchan(audio.url)
 Result.create!(search_id: audio.id, csv_file: csv_file)
 puts "Auchan Audio OK"
 
+ordinateur_portable = Search.create(url: "https://www.grosbill.com/2-ordinateur_portable-cat-ordinateurs", name: "Grosbill Ordinateur Portable", user_id: harris.id)
+csv_file = GrosbillHelper.grosbill(ordinateur_portable.url)
+Result.create!(search_id: ordinateur_portable.id, csv_file: csv_file)
+puts "Grosbill Ordinateur Portable OK"
+
 playmobil = Search.create(url:"https://www.auchan.fr/jouets-jeux-video-loisirs/jeux-jouets/lego-playmobil-construction/playmobil/ca-6856166", name: "Auchan Playmobil", user_id: harris.id)
 csv_file = AuchanHelper.auchan(playmobil.url)
 Result.create!(search_id: playmobil.id, csv_file: csv_file)
@@ -44,7 +48,7 @@ csv_file = AuchanHelper.auchan(tefal.url)
 Result.create!(search_id: tefal.id, csv_file: csv_file)
 puts "Auchan Tefal OK"
 
-moto = Search.create(url: "https://www.auchan.fr/jardin-auto-brico/auto-moto/ca-7290055", name: "Auchan Moto", user_id: harris.id)
+moto = Search.create(url: "https://www.auchan.fr/jardin-auto-brico/auto-moto/ca-7290055", name: "Auchan Auto", user_id: harris.id)
 csv_file = AuchanHelper.auchan(moto.url)
 Result.create!(search_id: moto.id, csv_file: csv_file)
 puts "Auchan Moto OK"
@@ -54,8 +58,13 @@ csv_file = AuchanHelper.auchan(multicuiseur.url)
 Result.create!(search_id: multicuiseur.id, csv_file: csv_file)
 puts "Auchan Multicuiseur OK"
 
+
+tv = Search.create(url: "https://www.grosbill.com/1-tv-video", name: "Grosbill TV", user_id: harris.id)
+csv_file = GrosbillHelper.grosbill(tv.url)
+Result.create!(search_id: tv.id, csv_file: csv_file)
+puts "Grosbill TV OK"
+
 velo = Search.create(url: "https://www.auchan.fr/jouets-jeux-video-loisirs/sport-plein-air/velo-cyclisme/velo-enfant/velo-de-6-a-12-ans/ca-201901241520", name: "Auchan Velo", user_id: harris.id)
 csv_file = AuchanHelper.auchan(velo.url)
 Result.create!(search_id: velo.id, csv_file: csv_file)
 puts "Auchan Velo OK"
-
